@@ -1,8 +1,8 @@
 
 const express = require("express");
 const mongoose = require("mongoose");
-const Vote = require("../models/Vote");
-const Candidate = require("../models/Candidate");
+const Vote = require("../Vote");
+const Candidate = require("../Candidate");
 const { authMiddleware } = require("../middleware/authMiddleware");
 
 const router = express.Router();
@@ -106,3 +106,4 @@ router.get("/results", async (req, res) => {
 });
 
 module.exports = router;
+

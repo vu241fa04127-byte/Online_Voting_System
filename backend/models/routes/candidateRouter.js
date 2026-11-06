@@ -1,6 +1,6 @@
 
 const express = require("express");
-const Candidate = require("../models/Candidate");
+const Candidate = require("../Candidate");
 const {
     authMiddleware,
     adminMiddleware
@@ -74,7 +74,7 @@ router.delete("/:id", authMiddleware, adminMiddleware, async (req, res) => {
             });
         }
 
-        const Vote = require("../models/Vote");
+        const Vote = require("../Vote");
         const votesExist = await Vote.exists({ candidate: candidate._id });
 
         if (votesExist) {
@@ -92,3 +92,4 @@ router.delete("/:id", authMiddleware, adminMiddleware, async (req, res) => {
 });
 
 module.exports = router;
+
